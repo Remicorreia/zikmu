@@ -1,0 +1,29 @@
+{# {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }} #}
+
+{{ form_start(form, {'attr': {'id': 'new_edit_user'}}) }}
+{# utilisation de classes bootstrap pour la mise en forme #}
+        <div class="row">
+                <div class="col-12">
+                        {{ form_label(form.username) }}
+                        {{ form_widget(form.username) }}
+                </div>
+                {% if is_granted('ROLE_ADMIN') %}
+                <div class="col-12">
+                        {{ form_label(form.roles) }}
+                        {{ form_widget(form.roles) }}
+                </div>
+  {% endif %}
+                <div class="col-12">
+                        {{ form_label(form.password) }}
+                        {{ form_widget(form.password) }}
+                </div>
+                <div class="col-12">
+                        <label for="verifpass">Saisir une seconde fois le mot de passe</label>
+                        <input type="password" id="verifpass" required>
+                </div>
+        </div>
+        <button class="btn btn-success">{{ button_label|default('Save') }}</button>
+{{ form_end(form) }}

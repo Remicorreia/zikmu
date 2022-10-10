@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit SousStatistique{% endblock %}
+
+{% block body %}
+    <h1>Edit SousStatistique</h1>
+
+    {{ include('sous_statistique/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_sous_statistique_index') }}">back to list</a>
+
+    {{ include('sous_statistique/_delete_form.html.twig') }}
+{% endblock %}

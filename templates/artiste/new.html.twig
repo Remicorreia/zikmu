@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Artiste{% endblock %}
+
+{% block body %}
+    <h1>Create new Artiste</h1>
+
+    {{ include('artiste/_form.html.twig') }}
+    {% for ss in sss %}
+    {{ss.designation}}
+    {{ss.stat.signification}}<br>
+    {% endfor %}
+
+    <a href="{{ path('app_artiste_index') }}">back to list</a>
+{% endblock %}

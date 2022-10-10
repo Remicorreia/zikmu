@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New SousStatistique{% endblock %}
+
+{% block body %}
+    <h1>Create new SousStatistique</h1>
+
+    {{ include('sous_statistique/_form.html.twig') }}
+
+    <a href="{{ path('app_sous_statistique_index') }}">back to list</a>
+{% endblock %}
